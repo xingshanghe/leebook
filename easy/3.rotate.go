@@ -20,6 +20,6 @@ func rotate(nums []int, k int) {
 	if l > n {
 		// nums = append([]int{}, append(nums[l-n:], nums[:l-n]...)...) // 地址变化，
 		// nums = append(nums[l-n:], nums[:l-n]...)
-		nums = append(nums[0:0], append(nums[l-n:], nums[:l-n]...)...) // 深拷贝
+		nums = append(nums[0:0], append(nums[l-n:], nums[:l-n]...)...) // 浅拷贝
 	}
 }
