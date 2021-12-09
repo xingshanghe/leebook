@@ -8,7 +8,10 @@
  */
 package main
 
-import "testing"
+import (
+	"sort"
+	"testing"
+)
 
 /**
 示例 1：
@@ -38,6 +41,8 @@ func TestIntersect(t *testing.T) {
 	}
 	for k, input := range inputs {
 		n := intersect(input[0], input[1])
+		sort.Ints(n)
+		sort.Ints(out[k])
 		if !equal(out[k], n) {
 			t.Error(input)
 		}

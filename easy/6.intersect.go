@@ -31,7 +31,7 @@ func intersect(nums1, nums2 []int) []int {
 		min = nums1
 	}
 	intersectMap := make(map[int]int) //计数map
-	for _, v := range max {
+	for _, v := range min {
 		if _, ok := intersectMap[v]; ok {
 			intersectMap[v] += 1
 		} else {
@@ -40,7 +40,7 @@ func intersect(nums1, nums2 []int) []int {
 	}
 	result := make([]int, 0)
 	// result := []int{}
-	for _, v := range min {
+	for _, v := range max {
 		if vk, ok := intersectMap[v]; ok && vk > 0 {
 			intersectMap[v] -= 1
 			result = append(result, v)
@@ -48,9 +48,6 @@ func intersect(nums1, nums2 []int) []int {
 			intersectMap[v] = -1
 		}
 	}
-	//var result []int
-	// result := make([]int, 0)
-	// result := []int{}
 
 	return result
 }
