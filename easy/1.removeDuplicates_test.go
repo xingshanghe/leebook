@@ -19,7 +19,6 @@ func TestRemoveDuplicates(t *testing.T) {
 			t.Error(input)
 		}
 	}
-
 }
 
 // equal reflect.DeepEqual效率不高
